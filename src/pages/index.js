@@ -137,6 +137,9 @@ export default function Home() {
         </div>
         }
       </div>
+      <div className='p-5'>
+      <Card student={{name: 'Made Easy', irn: '1293801839324', id: '#00001'}}/>
+      </div>
     </div>
   );
 }
