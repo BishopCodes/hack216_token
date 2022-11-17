@@ -15,6 +15,8 @@ import {
 
 import Web3 from 'web3';
 
+import Card from '../components/Card'
+
 export default function Home() {
   const [amountToClaim, setAmountToClaim] = useState("");
   const [balance, setBalance] = useState(0);
