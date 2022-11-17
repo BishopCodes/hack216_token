@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Web3Button } from "@thirdweb-dev/react";
 import styles from "../styles/Home.module.css";
 import Image from 'next/image'
-
+import { useRouter } from 'next/router'
 
 import {
   CardContent,
@@ -17,6 +17,8 @@ import Web3 from 'web3';
 
 import Card from '../components/Card'
 
+// import Whitelist from "../components/Whitelist";
+
 export default function Home() {
   const [amountToClaim, setAmountToClaim] = useState("");
   const [balance, setBalance] = useState(0);
@@ -27,6 +29,7 @@ export default function Home() {
 
   const web3 = new Web3(Web3.givenProvider || "http://localhost:8545");
   web3.eth.getAccounts().then((addresses) => setCurrentAddress(addresses[0]));
+  const router = useRouter()
 
   return (
     <div className={styles.container}>
@@ -140,7 +143,12 @@ export default function Home() {
         }
       </div>
       <div className='p-5'>
-      <Card student={{name: 'Made Easy', irn: '1293801839324', id: '#00001'}}/>
+      <button
+      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-48 h-15"
+      onClick={() => window.location.assign('https://phoenixid-rise.surge.sh/')}
+      >
+        Mint an NFT
+      </button>
       </div>
     </div>
   );
